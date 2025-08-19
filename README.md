@@ -1,20 +1,25 @@
-# Iris Classification FastAPI
+Iris Classification API
 
-## Problem
-Classify iris flowers (setosa, versicolor, virginica) from 4 numeric features.
+A FastAPI-based machine learning API for predicting Iris flower species using a trained model (`model.pkl`).  
+The API takes flower measurements (sepal length, sepal width, petal length, petal width) and returns the predicted species along with a confidence score.
 
-## Model
-- Dataset: scikit-learn iris
-- Algorithm: RandomForestClassifier
-- Test accuracy: printed by `model_dev.py`
+Features
+- Health check endpoint to verify API status  
+- Prediction endpoint for Iris species classification  
+- Model information endpoint to inspect model details  
+- Built with FastAPI,pydantic, and scikit-learn 
+- Supports JSON input/output  
 
-## Endpoints
-- `GET /` – health check
-- `POST /predict` – prediction
-- `GET /model-info` – metadata
+Requirements
+Make sure you have the following installed:
 
-## Run
-```bash
-pip install -r requirements.txt
-python model_dev.py
-uvicorn main:app --reload
+- Python 3.8+
+- FastAPI
+- Uvicorn
+- scikit-learn
+- joblib
+- numpy
+
+Install dependencies:
+bash
+pip install fastapi uvicorn scikit-learn joblib numpy
